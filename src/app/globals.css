@@ -1,0 +1,204 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to Solo Leveling dark fantasy theme colors */
+  --background: oklch(0.08 0.02 240); /* Deep dark blue-black */
+  --foreground: oklch(0.95 0.01 60); /* Bright gold-white */
+  --card: oklch(0.12 0.03 250); /* Dark blue card background */
+  --card-foreground: oklch(0.95 0.01 60); /* Gold-white text */
+  --popover: oklch(0.12 0.03 250);
+  --popover-foreground: oklch(0.95 0.01 60);
+  --primary: oklch(0.75 0.15 85); /* Bright gold for glowing effects */
+  --primary-foreground: oklch(0.08 0.02 240);
+  --secondary: oklch(0.15 0.02 240); /* Slightly lighter dark */
+  --secondary-foreground: oklch(0.95 0.01 60);
+  --muted: oklch(0.25 0.02 240); /* Muted dark blue */
+  --muted-foreground: oklch(0.65 0.01 60); /* Dimmed gold */
+  --accent: oklch(0.75 0.15 85); /* Gold accent for highlights */
+  --accent-foreground: oklch(0.08 0.02 240);
+  --destructive: oklch(0.55 0.25 15); /* Dark red for errors */
+  --destructive-foreground: oklch(0.95 0.01 60);
+  --border: oklch(0.25 0.02 240); /* Dark borders */
+  --input: oklch(0.15 0.02 240); /* Dark input backgrounds */
+  --ring: oklch(0.75 0.15 85); /* Gold focus rings */
+  --chart-1: oklch(0.75 0.15 85);
+  --chart-2: oklch(0.65 0.12 200);
+  --chart-3: oklch(0.55 0.1 280);
+  --chart-4: oklch(0.7 0.13 120);
+  --chart-5: oklch(0.6 0.11 320);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.08 0.02 240);
+  --sidebar-foreground: oklch(0.95 0.01 60);
+  --sidebar-primary: oklch(0.75 0.15 85);
+  --sidebar-primary-foreground: oklch(0.08 0.02 240);
+  --sidebar-accent: oklch(0.15 0.02 240);
+  --sidebar-accent-foreground: oklch(0.95 0.01 60);
+  --sidebar-border: oklch(0.25 0.02 240);
+  --sidebar-ring: oklch(0.75 0.15 85);
+}
+
+.dark {
+  /* Dark mode uses same colors as this is already a dark theme */
+  --background: oklch(0.08 0.02 240);
+  --foreground: oklch(0.95 0.01 60);
+  --card: oklch(0.12 0.03 250);
+  --card-foreground: oklch(0.95 0.01 60);
+  --popover: oklch(0.12 0.03 250);
+  --popover-foreground: oklch(0.95 0.01 60);
+  --primary: oklch(0.75 0.15 85);
+  --primary-foreground: oklch(0.08 0.02 240);
+  --secondary: oklch(0.15 0.02 240);
+  --secondary-foreground: oklch(0.95 0.01 60);
+  --muted: oklch(0.25 0.02 240);
+  --muted-foreground: oklch(0.65 0.01 60);
+  --accent: oklch(0.75 0.15 85);
+  --accent-foreground: oklch(0.08 0.02 240);
+  --destructive: oklch(0.55 0.25 15);
+  --destructive-foreground: oklch(0.95 0.01 60);
+  --border: oklch(0.25 0.02 240);
+  --input: oklch(0.15 0.02 240);
+  --ring: oklch(0.75 0.15 85);
+  --chart-1: oklch(0.75 0.15 85);
+  --chart-2: oklch(0.65 0.12 200);
+  --chart-3: oklch(0.55 0.1 280);
+  --chart-4: oklch(0.7 0.13 120);
+  --chart-5: oklch(0.6 0.11 320);
+  --sidebar: oklch(0.08 0.02 240);
+  --sidebar-foreground: oklch(0.95 0.01 60);
+  --sidebar-primary: oklch(0.75 0.15 85);
+  --sidebar-primary-foreground: oklch(0.08 0.02 240);
+  --sidebar-accent: oklch(0.15 0.02 240);
+  --sidebar-accent-foreground: oklch(0.95 0.01 60);
+  --sidebar-border: oklch(0.25 0.02 240);
+  --sidebar-ring: oklch(0.75 0.15 85);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background: radial-gradient(ellipse at center, oklch(0.12 0.03 250) 0%, oklch(0.08 0.02 240) 70%);
+  }
+}
+
+/* Added Solo Leveling animations and custom classes in @layer components */
+@layer components {
+  /* Custom gradient backgrounds for dungeon atmosphere */
+  .dungeon-bg {
+    background: radial-gradient(ellipse at center, oklch(0.12 0.03 250) 0%, oklch(0.08 0.02 240) 70%);
+  }
+
+  .skill-tree-bg {
+    background: linear-gradient(135deg, oklch(0.08 0.02 240) 0%, oklch(0.12 0.03 250) 50%, oklch(0.08 0.02 240) 100%);
+  }
+
+  .glow-effect {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  /* .text-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  } */
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .dungeon-entrance {
+    animation: dungeon-gate 1.5s ease-out forwards;
+  }
+}
+
+/* Moved keyframes to @layer utilities */
+@layer utilities {
+  @keyframes glow {
+    0%,
+    100% {
+      box-shadow: 0 0 5px oklch(0.75 0.15 85), 0 0 10px oklch(0.75 0.15 85), 0 0 15px oklch(0.75 0.15 85);
+    }
+    50% {
+      box-shadow: 0 0 10px oklch(0.75 0.15 85), 0 0 20px oklch(0.75 0.15 85), 0 0 30px oklch(0.75 0.15 85);
+    }
+  }
+
+  /* @keyframes pulse-glow {
+    0%,
+    100% {
+      text-shadow: 0 0 5px oklch(0.75 0.15 85), 0 0 10px oklch(0.75 0.15 85);
+    }
+    50% {
+      text-shadow: 0 0 10px oklch(0.75 0.15 85), 0 0 20px oklch(0.75 0.15 85), 0 0 30px oklch(0.75 0.15 85);
+    }
+  } */
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes dungeon-gate {
+    0% {
+      transform: scaleY(0) scaleX(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scaleY(0.5) scaleX(0.9);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scaleY(1) scaleX(1);
+      opacity: 1;
+    }
+  }
+}
